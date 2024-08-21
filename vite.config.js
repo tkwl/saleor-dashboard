@@ -46,7 +46,9 @@ export default defineConfig(({ command, mode }) => {
     CUSTOM_VERSION,
     FLAGS_SERVICE_ENABLED,
   } = env;
-
+  console.log('Loading environment variables:')
+  console.log('API_URI:', env.API_URI)
+  console.log('APP_MOUNT_URI:', env.APP_MOUNT_URI)
   const base = STATIC_URL ?? "/";
   const featureFlagsEnvs = Object.fromEntries(
     Object.entries(env).filter(([flagKey]) => flagKey.startsWith("FF_")),
